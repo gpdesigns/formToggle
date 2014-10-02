@@ -39,7 +39,17 @@
 <script src="http://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
 <script>
   (function(){
-     
+    $('html').addClass('js'); // test for java
+    var contactForm = {
+      init: function() {
+        $('<button></button>', {
+          text: 'Contact Me'
+        })
+          .insertAfter('article')
+          .on('click', this.show)
+      }
+    } 
+    contactForm.init();  // initialize object 
   })();
 </script>
 </body>
