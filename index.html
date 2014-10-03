@@ -51,7 +51,17 @@
           .on('click', this.show) // on click show contactForm
       },
       show: function() {
+        contactForm.close.call(contactForm.container);
         contactForm.container.show();
+      },
+
+      close: function() {
+        var $this = $(this);
+        $('<span class=close>X</span>')
+          .prependTo(this)
+          .on('click', function(){
+            this.hide();
+          });
       }
     }; 
     contactForm.init();  // initialize object 
