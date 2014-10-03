@@ -44,11 +44,11 @@
       container: $('#contact'),
 
       config: {
-        effect: 'slideToggle',
-        time:200
+        effect: 'slideToggle'
       },
 
-      init: function() { //initiate object
+      init: function(config) { //initiate object
+        $.extend(this.config, config);
         $('<button></button>', { // create button and add text
           text: 'Contact Me'
         })
@@ -65,11 +65,14 @@
         $('<span class=close>X</span>')
           .prependTo(this)
           .on('click', function(){
-            $this.hide();
+            $this[contactForm.config.effect](400);
           });
       }
     }; 
-    contactForm.init('slideToggle', 200);  // initialize object 
+    contactForm.init({
+      effect: 'fadeToggle',
+      speed: 200
+    });  // initialize object 
   })();
 </script>
 </body>
