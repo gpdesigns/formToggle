@@ -57,7 +57,7 @@
       },
       show: function() {
         contactForm.close.call(contactForm.container);
-        contactForm.container[contactForm.config.effect](400);
+        contactForm.container[contactForm.config.effect](contactForm.config.speed);
       },
 
       close: function() {
@@ -65,7 +65,7 @@
         $('<span class=close>X</span>')
           .prependTo(this)
           .on('click', function(){
-            $this[contactForm.config.effect](400);
+            $this[contactForm.config.effect](contactForm.config.speed);
           });
       }
     }; 
