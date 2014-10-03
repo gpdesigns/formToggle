@@ -43,6 +43,11 @@
     var contactForm = { // parent object
       container: $('#contact'),
 
+      config: {
+        effect: 'slideToggle',
+        time:200
+      },
+
       init: function() { //initiate object
         $('<button></button>', { // create button and add text
           text: 'Contact Me'
@@ -52,7 +57,7 @@
       },
       show: function() {
         contactForm.close.call(contactForm.container);
-        contactForm.container.show();
+        contactForm.container[contactForm.config.effect](400);
       },
 
       close: function() {
@@ -60,11 +65,11 @@
         $('<span class=close>X</span>')
           .prependTo(this)
           .on('click', function(){
-            this.hide();
+            $this.hide();
           });
       }
     }; 
-    contactForm.init();  // initialize object 
+    contactForm.init('slideToggle', 200);  // initialize object 
   })();
 </script>
 </body>
