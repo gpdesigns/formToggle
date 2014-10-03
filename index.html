@@ -40,13 +40,13 @@
 <script>
   (function(){
     $('html').addClass('js'); // test for java
-    var contactForm = {
-      init: function() {
-        $('<button></button>', {
+    var contactForm = { // parent object
+      init: function() { //initiate object
+        $('<button></button>', { // create button and add text
           text: 'Contact Me'
         })
-          .insertAfter('article')
-          .on('click', this.show)
+          .insertAfter('article') // insert button after article tag
+          .on('click', this.show) // on click show contactForm
       }
     } 
     contactForm.init();  // initialize object 
